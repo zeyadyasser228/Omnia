@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="1.jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omnia Ahmed - Work</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .project-card {
+        display: none; /* Hide all project cards by default */
+      }
+      .active {
+        display: block; /* Show only active project cards */
+      }
+      /* Flex container to align cards side by side */
+      .projects-container {
+        display: flex;
+        justify-content: space-between; /* Space between the cards */
+        flex-wrap: wrap; /* Allow cards to wrap onto the next line if needed */
+        gap: 10px; /* Decreased gap between cards */
+      }
+    </style>
+    <script>
+      let currentPageIndex = 0; // Track the current page index
+      const projectsPerPage = 2; // Number of projects to display per page
+
+      // Function to show only the active project cards based on the current page
+      function showProjects() {
+        const projects = document.querySelectorAll(".project-card");
+        projects.forEach((project, index) => {
+          project.style.display = "none"; // Hide all project cards
+          if (
+            index >= currentPageIndex * projectsPerPage &&
+            index < (currentPageIndex + 1) * projectsPerPage
+          ) {
+            project.style.display = "block"; // Show projects for the current page
+          }
+        });
+      }
+
+      // Function to change the project page
+      function changePage(pageIndex) {
+        currentPageIndex = pageIndex;
+        showProjects();
+        updatePaginationButtons();
+      }
+
+      // Function to update the pagination buttons' state
+      function updatePaginationButtons() {
+        const paginationButtons =
+          document.querySelectorAll(".pagination-button");
+        paginationButtons.forEach((button, index) => {
+          button.classList.remove("bg-pink", "text-dark");
+          button.classList.add("bg-gray-700", "text-white");
+          if (index === currentPageIndex) {
+            button.classList.add("bg-pink", "text-dark"); // Highlight the active page button
+          }
+        });
+      }
+
+      // Show the initial projects on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        showProjects();
+        updatePaginationButtons();
+      });
+    </script>
+  </head>
+  <body class="bg-dark text-white">
+    <!-- Header Section -->
+    <header class="p-5 bg-dark flex justify-between items-center">
+      <div class="text-3xl text-pink font-bold">
+        <a href="index.html" class="hover:text-pink"
+          >Omnia<span class="text-pink">.</span></a
+        >
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="index.html" class="hover:text-pink">Home</a></li>
+          <li><a href="services.html" class="hover:text-pink">Services</a></li>
+          <li><a href="resume.html" class="hover:text-pink">Resume</a></li>
+          <li><a href="work.html" class="hover:text-pink">Work</a></li>
+          <li><a href="contact.html" class="hover:text-pink">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="bg-pink text-dark px-4 py-2 rounded-lg"
+        >Hire Me</a
+      >
+    </header>
+
+    <!-- Work Section -->
+    <section class="p-10">
+      <h1 class="text-4xl font-bold mb-6 text-center text-pink">My Projects</h1>
+      <p class="text-center text-lg mb-12 max-w-xl mx-auto">
+        Explore my work and projects that showcase my skills and creativity in
+        data science.
+      </p>
+
+      <div class="projects-container" id="projects-container">
+        <!-- Project Card 1 -->
+        <div class="project-card active">
+          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="heart.jpg"
+              alt="Project 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-5">
+              <h2 class="text-2xl font-bold mb-2">Heart Diseases Model</h2>
+              <p class="mb-4">
+                Heart diseases are conditions affecting the heart and blood
+                vessels, including coronary artery disease and heart attacks.
+                Key risk factors include unhealthy lifestyles and medical
+                issues. Prevention involves a healthy diet and regular exercise.
+              </p>
+              <p class="font-semibold">
+                Tools & Languages: Python, Pandas, Matplotlib, machine learning
+                ,npl
+              </p>
+              <div class="mt-4">
+                <a
+                  href="https://github.com/Omnia-Ezzat/Heart_Disease-.git"
+                  target="_blank"
+                  class="bg-pink text-dark px-4 py-2 rounded-lg inline-block"
+                  >View Repo</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center space-x-2 mt-10">
+        <!-- Create numbered buttons for pagination -->
+        <button
+          class="pagination-button bg-pink text-dark px-4 py-2 rounded-lg"
+          onclick="changePage(0)"
+        >
+          1
+        </button>
+        <button
+          class="pagination-button bg-gray-700 text-white px-4 py-2 rounded-lg"
+          onclick="changePage(1)"
+        >
+          2
+        </button>
+        <button
+          class="pagination-button bg-gray-700 text-white px-4 py-2 rounded-lg"
+          onclick="changePage(2)"
+        >
+          3
+        </button>
+        <button
+          class="pagination-button bg-gray-700 text-white px-4 py-2 rounded-lg"
+          onclick="changePage(3)"
+        >
+          4
+        </button>
+        <button
+          class="pagination-button bg-gray-700 text-white px-4 py-2 rounded-lg"
+          onclick="changePage(4)"
+        >
+          5
+        </button>
+        <!-- Add more buttons if you have more projects -->
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer
+      class="p-5 bg-dark flex flex-col lg:flex-row justify-between items-center mt-10"
+    >
+      <p class="text-center mb-4 lg:mb-0">
+        &copy; 2024 Omnia Ahmed. All Rights Reserved.
+      </p>
+      <div class="flex space-x-8">
+        <a
+          href="https://github.com/Omnia-Ezzat/-Omnia-Ahmed"
+          class="hover:text-pink"
+          target="_blank"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12c0 4.418 2.865 8.167 6.839 9.491.5.092.682-.216.682-.481 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.109-1.465-1.109-1.465-.907-.62.069-.608.069-.608 1.003.07 1.53 1.03 1.53 1.03.892 1.528 2.341 1.087 2.912.832.092-.647.35-1.087.636-1.338-2.221-.252-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.591 9.591 0 0112 6.844c.853.004 1.712.115 2.514.337 1.908-1.294 2.747-1.025 2.747-1.025.545 1.376.201 2.393.099 2.646.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.942.36.31.682.921.682 1.856 0 1.34-.012 2.421-.012 2.749 0 .268.18.577.688.479C19.137 20.162 22 16.418 22 12c0-5.52-4.48-10-10-10z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/omnia-ezzat-579256253/"
+          class="hover:text-pink"
+          target="_blank"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 0h-14c-2.75 0-5 2.25-5 5v14c0 2.75 2.25 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.75-2.25-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.5c-1 0-1.5-.667-1.5-1.5 0-.823.5-1.5 1.5-1.5s1.5.677 1.5 1.5c0 .833-.5 1.5-1.5 1.5zm13.5 11.5h-3v-5.5c0-1.5-.833-2.5-2-2.5s-2 1-2 2.5v5.5h-3v-10h3v1.333c.417-.667 1.333-1.333 2.333-1.333 2 0 3.667 1.333 3.667 4v6.667z"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
