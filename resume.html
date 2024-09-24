@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-dark text-white">
-    <header class="p-5 bg-dark flex justify-between items-center">
+    <header class="p-5 bg-dark flex flex-col md:flex-row justify-between items-center">
       <div class="text-3xl text-pink font-bold">
         <a href="index.html" class="hover:text-pink"
           >Omnia<span class="text-pink">.</span></a
         >
       </div>
-      <nav>
-        <ul class="flex space-x-6 text-lg">
+      <nav class="mt-4 md:mt-0">
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-lg">
           <li><a href="index.html" class="hover:text-pink">Home</a></li>
           <li><a href="services.html" class="hover:text-pink">Services</a></li>
           <li><a href="resume.html" class="hover:text-pink">Resume</a></li>
@@ -24,12 +24,14 @@
           <li><a href="contact.html" class="hover:text-pink">Contact</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="bg-pink text-dark px-4 py-2 rounded-lg"
+      <a
+        href="contact.html"
+        class="bg-pink text-dark px-4 py-2 rounded-lg mt-4 md:mt-0"
         >Hire Me</a
       >
     </header>
 
-    <section class="p-10">
+    <section class="p-4 md:p-10">
       <h1 class="text-4xl font-bold mb-6 text-center text-pink">Omnia Ahmed</h1>
       <h2 class="text-2xl mb-4 text-center">Data Scientist</h2>
       <p class="text-center mb-12 max-w-xl mx-auto">
@@ -37,7 +39,7 @@
         learning, and statistical modeling.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <h2 class="text-2xl font-bold mb-4 text-pink">Experience</h2>
           <div class="mb-4">
@@ -48,18 +50,17 @@
                 <b>Recruitment:</b> Manage the recruitment process and conduct
                 interviews.
               </li>
-              <li><b>boarding:</b> Facilitate the integration of new team members.</li>
+              <li><b>Onboarding:</b> Facilitate the integration of new team members.</li>
               <li><b>Team Coordination:</b> Ensure effective communication across different tracks.</li>
-              <li><b> Management:</b>Organize workshops and community engagement activities.</li>
+              <li><b>Event Management:</b> Organize workshops and community engagement activities.</li>
               <li>Created data visualizations to present findings.</li>
               <li>
                 Collaborated with cross-functional teams to improve data
                 strategies.
               </li>
-              <li><b>Performance Management:< Support performance evaluations and provide feedback.Performance Management: Support performance evaluations and provide feedback.</li>
+              <li><b>Performance Management:</b> Support performance evaluations and provide feedback.</li>
             </ul>
           </div>
-        
         </div>
 
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -69,7 +70,7 @@
               Bachelor’s degree in computer science & AI – Benha University
             </h3>
             <p class="text-gray-400">
-              Benha University| Expected Graduation: 2026
+              Benha University | Expected Graduation: 2026
             </p>
           </div>
         </div>
@@ -88,7 +89,7 @@
       </div>
     </section>
 
-    <footer class="p-5 bg-dark flex justify-center space-x-8 mt-10">
+    <footer class="p-5 bg-dark flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mt-10">
       <p>&copy; 2024 Omnia Ahmed. All Rights Reserved.</p>
       <a
         href="https://github.com/Omnia-Ezzat/-Omnia-Ahmed"
@@ -118,7 +119,7 @@
           viewBox="0 0 24 24"
         >
           <path
-            d="M19 0h-14c-2.75 0-5 2.25-5 5v14c0 2.75 2.25 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.75-2.25-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.5c-1 0-1.5-.667-1.5-1.5 0-.823.5-1.5 1.5-1.5s1.5.677 1.5 1.5c0 .833-.5 1.5-1.5 1.5zm13.5 11.5h-3v-5.5c0-1.5-.833-2.5-2-2.5s-2 1-2 2.5v5.5h-3v-10h3v1.333c.417-.667 1.333-1.333 2.333-1.333 2.167 0 4 1.5 4 4v6z"
+            d="M19 0h-14c-2.75 0-5 2.25-5 5v14c0 2.75 2.25 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.75-2.25-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.5c-1 0-1.5-.667-1.5-1.5 0-.823.5-1.5 1.5-1.5s1.5.677 1.5 1.5c0 .833-.5 1.5-1.5 1.5zm13.5 11.5h-3v-5c0-1.208-.04-2.778-1.69-2.778-1.7 0-1.96 1.292-1.96 2.687v5.091h-3v-10h2.86v1.385h.04c.399-.7 1.37-1.439 2.83-1.439 3.03 0 3.59 1.99 3.59 4.583v5.471z"
           />
         </svg>
       </a>
